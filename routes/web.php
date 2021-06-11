@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
+});
+
+Route::get('/form_registrasi', function () {
+    return view('form_registrasi');
+});
+
+Route::get('/data_activity', function () {
+    return view('data_activity');
+});
+
+Route::get('/data_activity_detail', function () {
+    return view('data_activity_detail');
+});
+
+Route::get('/data_activity_edit', function () {
+    return view('data_activity_edit');
 });
