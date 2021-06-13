@@ -13,21 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', 'DashboardController@index');
 
-Route::get('/form_registrasi', function () {
-    return view('form_registrasi');
-});
+Route::get('/form_registrasi', 'CandidateController@create');
 
-Route::get('/data_activity', function () {
-    return view('data_activity');
-});
+Route::get('/data_activity', 'CandidateController@index');
 
-Route::get('/data_activity_detail', function () {
-    return view('data_activity_detail');
-});
+Route::get('/data_activity_detail/{id}', 'CandidateController@show');
 
 Route::get('/data_activity_edit', function () {
     return view('data_activity_edit');
