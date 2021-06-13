@@ -12,8 +12,6 @@
                 </ol>
             </nav>
         </div>
-
-
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
@@ -26,7 +24,6 @@
                                         <th> Nama Kandidat</th>
                                         <th>Jurusan</th>
                                         <th>Tanggal Registrasi</th>
-                                        <th>Unit Kerja</th>
                                         <th>Status</th>
                                         <th>Email</th>
                                         <th>Aksi</th>
@@ -35,36 +32,21 @@
                                 <tbody>
                                     @foreach ($candidates as $candidate)
                                         <tr>
-                                            <td>{{$candidate['No']}}</td>
-                                            <td>{{$candidate['Nama Kandidat']}} </td>
-                                            <td>{{$candidate['Jurusan']}}</td>
-                                            <td>{{$candidate['Tanggal Registrasi']}}</td>
+                                            <td>{{$candidate['id']}}</td>
+                                            <td>{{$candidate['name']}} </td>
+                                            <td>{{$candidate['major']}}</td>
+                                            <td>{{$candidate['date_of_birth']}}</td>
                                             <td>{{$candidate['Unit Kerja']}}</td>
                                             <td>
-                                                <label class="badge badge-gradient-warning">{{$candidate['Status']}} </label>
+                                                <label class="badge badge-gradient-warning">{{$candidate['candidate_status_id']}} </label>
                                             </td>
-                                            <td>{{$candidate['Email']}}</td>
+                                            <td>{{$candidate['email']}}</td>
                                             <td>
                                                 <a href="{{ url('data_activity_detail') }}" type="button" class="btn btn-sm btn-primary mb-1"> Detail</a>
                                                 <a href="{{ url('data_activity_edit') }}" type="button" class="btn btn-sm btn-light mb-1"> Ubah</a>
                                             </td>
                                         </tr>
-                                    @endforeach 
-                                    {{-- <tr>
-                                        <td></td>
-                                        <td>Annisa Rahma </td>
-                                        <td>Komunikasi</td>
-                                        <td>Dec 3, 2020</td>
-                                        <td>Corplan</td>
-                                        <td>
-                                            <label class="badge badge-gradient-warning">Review </label>
-                                        </td>
-                                        <td>mailsample@gmail.com</td>
-                                        <td>
-                                            <a href="{{ url('data_activity_detail') }}" type="button" class="btn btn-sm btn-primary mb-1"> Detail</a>
-                                            <a href="{{ url('data_activity_edit') }}" type="button" class="btn btn-sm btn-light mb-1"> Ubah</a>
-                                        </td>
-                                    </tr> --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

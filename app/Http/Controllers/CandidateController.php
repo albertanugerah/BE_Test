@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Candidate;
 use Illuminate\Http\Request;
 
 class CandidateController extends Controller
@@ -13,11 +14,7 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        $candidates = [
-            ['No' => 1, 'Nama Kandidat' => 'Annisa Rahma', 'Jurusan' => 'Komunikasi', 'Tanggal Registrasi' => 'Dec 3, 2020', "Unit Kerja" => "IT Group", "Status" => 'Review', 'Email' => "annisa@gmail.com"],
-            ['No' => 2, 'Nama Kandidat' => 'Joko Anwar', 'Jurusan' => 'Hukum', 'Tanggal Registrasi' => 'Dec 8, 2020', "Unit Kerja" => "Audit Group", "Status" => 'Review', 'Email' => "joko@gmail.com"],
-            ['No' => 3, 'Nama Kandidat' => 'Budi Jamal', 'Jurusan' => 'Ekonomi', 'Tanggal Registrasi' => 'Dec 8, 2020', "Unit Kerja" => "Finance Group", "Status" => 'Review', 'Email' => "joko@gmail.com"],
-        ];
+        $candidates = Candidate::all();
 
         return view('candidate.data_activity', compact('candidates'));
     }
@@ -40,7 +37,7 @@ class CandidateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

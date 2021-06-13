@@ -1,1 +1,3 @@
-require('./bootstrap');
+require("./bootstrap");
+import flatpckr from "flatpickr";
+window.flatpckr = flatpckr;

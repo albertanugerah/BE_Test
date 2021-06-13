@@ -15,11 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DashboardController@index');
 
-Route::get('/form_registrasi', 'CandidateController@create');
-
-Route::get('/data_activity', 'CandidateController@index');
-
-Route::get('/data_activity_detail/{id}', 'CandidateController@show');
+Route::get('/candidate', 'CandidateController@index');
+Route::get('/candidate/create', 'CandidateController@create');
+Route::get('/candidate/{id}', 'CandidateController@show');
+Route::post('/candidate', 'CandidateController@store');
 
 Route::get('/data_activity_edit', function () {
     return view('data_activity_edit');

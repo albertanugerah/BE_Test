@@ -105,13 +105,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('form_registrasi') }}">
+            <a class="nav-link" href="{{ url('candidate/create') }}">
               <span class="menu-title">Forms Registrasi</span>
               <i class="mdi mdi-format-list-bulleted menu-icon"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('data_activity') }}">
+            <a class="nav-link" href="{{ url('candidate') }}">
               <span class="menu-title">Data Activity</span>
               <i class="mdi mdi-table-large menu-icon"></i>
             </a>
