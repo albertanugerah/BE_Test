@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Religion extends Model
 {
-    protected  $table = ['religion'];
-    protected $primaryKey = ['id'];
+    protected  $table = 'religion';
+    protected $primaryKey = 'id';
 
     public function Candidate()
     {
-        return $this->belongsTo('App\Models\Candidate');
+        return $this->hasMany('App\Models\Candidate');
     }
 }

@@ -24,6 +24,7 @@
                                         <th> Nama Kandidat</th>
                                         <th>Jurusan</th>
                                         <th>Tanggal Registrasi</th>
+                                        <th>Unit Kerja</th>
                                         <th>Status</th>
                                         <th>Email</th>
                                         <th>Aksi</th>
@@ -35,11 +36,11 @@
                                         <td>{{$candidate['id']}}</td>
                                         <td>{{$candidate['name']}} </td>
                                         <td>{{$candidate['major']}}</td>
-                                        <td>{{$candidate['date_of_birth']}}</td>
+                                        <td>{{$candidate['created_at']}}</td>
                                         <td>{{$candidate['Unit Kerja']}}</td>
                                         <td>
                                             <label
-                                                class="badge badge-gradient-warning">{{$candidate['candidate_status_id']}}
+                                                class="badge badge-gradient-warning">{{$candidate->CandidateStatus->status}}
                                             </label>
                                         </td>
                                         <td>{{$candidate['email']}}</td>

@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bank extends Model
 {
-    protected $table = ['bank'];
-    protected $primaryKey = ['id'];
+    protected $table = 'bank';
+    protected $primaryKey = 'id';
 
 
     public function Candidate()

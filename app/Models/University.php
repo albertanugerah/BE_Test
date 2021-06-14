@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class University extends Model
 {
-    protected $table = ['university'];
-    protected $primaryKey = ['id'];
+    protected $table = 'university';
+    protected $primaryKey = 'id';
 
     public function Candidate()
     {

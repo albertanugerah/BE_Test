@@ -81,21 +81,15 @@
                                         <div class="form-group">
                                             <label for="identity_file"> File KTP</label><span
                                                 class="text-danger">*</span>
-                                            <input type="file" class="form-control" id="#" placeholder=" KTP "
-                                                name="identity_file" value="{{old('identity_file')}}">
+                                            <input type="file" class="form-control" id="identity_file"
+                                                placeholder=" KTP " name="identity_file"
+                                                value="{{old('identity_file')}}">
 
                                         </div>
                                         <div class="form-group">
-                                            <label for="bank_name">Nama Bank </label><span class="text-danger">*</span>
-                                            <select class="form-control" id="bank_name" name="bank_name"
-                                                value="{{old('bank_name')}}">
-                                                <option disabled selected value>--Select Bank --</option>
-                                                <option value="1">BCA</option>
-                                                <option value="2">MANDIRI</option>
-                                                <option value="3">BRI</option>
-                                                <option value="4">BTN</option>
-                                                <option value="5">BNI</option>
-                                            </select>
+                                            <label for="bank_id">Nama Bank </label><span class="text-danger">*</span>
+                                            <input type="text" class="form-control" id="#" placeholder="Nama Bank "
+                                                name="bank_name" value="{{old('bank_name')}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="#">Nomor Bank Akun </label><span class="text-danger">*</span>
@@ -105,7 +99,7 @@
                                         <div class="form-group">
                                             <label for="#">Alamat Domisili </label><span class="text-danger">*</span>
                                             <textarea class="form-control" id="#" rows="8" placeholder="Alamat Domisili"
-                                                name="address">value="{{old('address')}}"</textarea>
+                                                name="address">{{old('address')}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="#">Instagram</label><span class="text-danger"></span>
@@ -124,28 +118,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="education">Pendidikan</label><span class="text-danger">*</span>
-                                            <select class="form-control" id="education" name="education"
-                                                value="{{old('education')}}">
-                                                <option disabled selected value>--Pilih Pendidikan --</option>
-                                                <option value="1_SMA">SMA</option>
-                                                <option value="2_D3">D3</option>
-                                                <option value="3_D4">D4</option>
-                                                <option value="4_S1">S1</option>
-                                                <option value="5_S2">S2</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="#" placeholder="Pendidikan"
+                                                name="education_name" value="{{old('education_name')}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="#">Universitas</label><span class="text-danger">*</span>
-                                            <select class="form-control" id="university" name="university"
-                                                value="{{old('university')}}">
-                                                <option disabled selected value>--Pilih Universitas --</option>
-                                                <option value="1_Universitas Singa Perbangsa">Universitas Singa
-                                                    Perbangsa</option>
-                                                <option value="2_ITB">ITB</option>
-                                                <option value="3_UI">UI</option>
-                                                <option value="4_UNPAD">UNPAD</option>
-                                                <option value="5_UNJ">UNJ</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="#" placeholder="Universitas"
+                                                name="university_name" value="{{old('university_name')}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="#"> Tahun Lulus</label><span class="text-danger">*</span>
@@ -208,7 +187,7 @@
                                                     <label for="description">Deskripsi Kegiatan </label><span
                                                         class="text-danger">*</span>
                                                     <textarea class="form-control" id="exampleTextarea1" rows="6"
-                                                        name="description">value="{{old('description')}}"</textarea>
+                                                        name="description">{{old('description')}}</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="file_org"> File</label>
@@ -231,7 +210,7 @@
                                         <div class="form-group">
                                             <label for="#">Keahlian</label><span class="text-danger">*</span>
                                             <textarea class="form-control" id="exampleTextarea1" rows="10"
-                                                name="skill">value="{{old('skill')}}"</textarea>
+                                                name="skill">{{old('skill')}}</textarea>
                                         </div>
                                     </div>
                                 </div><br>
@@ -253,82 +232,28 @@
                                         <div class="form-group">
                                             <label for="#"> Portofolio</label>
                                             <input type="file" class="form-control" id="#" placeholder="Portofolio.pdf"
-                                                name="file_porto" value="{{old('file_porto')}}">
+                                                name="file_portofolio" value="{{old('file_portofolio')}}">
                                         </div>
                                     </div>
                                 </div><br>
                                 <h4 class="card-title">Mengenal Jasamarga dari ? </h4>
                                 <div class="row">
+                                    @foreach ($source_information as $item)
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <div class="form-group mb-0">
-                                                    <input type="radio" id="customRadio1" name="customRadio"
-                                                        class="custom-control-input" name="source_information_id"
-                                                        value="{{old('source_information_id')}}">
-                                                    <label class="custom-control-label"
-                                                        for="customRadio1">Internet</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <div class="form-group mb-0">
-                                                    <input type="radio" id="customRadio2" name="customRadio"
-                                                        class="custom-control-input" name="source_information_id">
-                                                    <label class="custom-control-label"
-                                                        for="customRadio2">Kampus</label>
-                                                </div>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input"
+                                                        name="source_information" id="{{$item->id}}"
+                                                        value="{{old('source_information')}}">
+                                                    {{$item->name}} <i class="input-helper"></i></label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <div class="form-group mb-0">
-                                                    <input type="radio" id="customRadio3" name="customRadio"
-                                                        class="custom-control-input" name="source_information_id">
-                                                    <label class="custom-control-label"
-                                                        for="customRadio3">Instagram</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <div class="form-group mb-0">
-                                                    <input type="radio" id="customRadio4" name="customRadio"
-                                                        class="custom-control-input" name="source_information_id">
-                                                    <label class="custom-control-label"
-                                                        for="customRadio4">facebook</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <div class="form-group mb-0">
-                                                    <input type="radio" id="customRadio5" name="customRadio"
-                                                        class="custom-control-input" name="source_information_id">
-                                                    <label class="custom-control-label"
-                                                        for="customRadio5">Twitter</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <div class="form-group mb-0">
-                                                    <input type="radio" id="customRadio6" name="customRadio"
-                                                        class="custom-control-input" name="source_information_id">
-                                                    <label class="custom-control-label"
-                                                        for="customRadio6">Lain-lain</label>
-                                                </div>
-                                            </div>
-                                            <input type="text" class="form-control" id="#" placeholder=""
-                                                name="source_information_other">
-                                        </div>
-                                    </div>
-                                </div><br>
+                                    @endforeach
+                                </div>
+                                <input type="text" class="form-control col-md-3 float-right mr-5" id="#" placeholder=""
+                                    name="source_information_others" value="{{old('source_information_others')}}"><br>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">

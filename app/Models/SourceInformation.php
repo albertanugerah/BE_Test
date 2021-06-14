@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class SourceInformation extends Model
 {
-    protected $table = ['source_information'];
-    protected $primaryKey = ['id'];
+    protected $table = 'source_information';
+    protected $primaryKey = 'id';
 
     public function Candidate()
     {
-        return $this->belongsToMany('App\Models\Candidate');
+        return $this->hasOne('App\Models\Candidate');
     }
 }
