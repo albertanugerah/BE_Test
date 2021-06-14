@@ -14,12 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'DashboardController@index');
+Route::resource('candidate', 'CandidateController');
 
-Route::get('/candidate', 'CandidateController@index');
-Route::get('/candidate/create', 'CandidateController@create');
-Route::get('/candidate/{id}', 'CandidateController@show');
-Route::post('/candidate', 'CandidateController@store');
-
-Route::get('/data_activity_edit', function () {
-    return view('data_activity_edit');
-});
+// Route::get('/candidate', 'CandidateController@index');
+// Route::get('/candidate/create', 'CandidateController@create');
+// Route::get('/candidate/{id}', 'CandidateController@show');
+// Route::post('/candidate', 'CandidateController@store');
+// Route::get('/candidate/{id}/edit', 'CandidateController@edit');
+// Route::put('/candidate/{id}', 'CandidateController@update');

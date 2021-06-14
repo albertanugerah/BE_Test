@@ -31,21 +31,25 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($candidates as $candidate)
-                                        <tr>
-                                            <td>{{$candidate['id']}}</td>
-                                            <td>{{$candidate['name']}} </td>
-                                            <td>{{$candidate['major']}}</td>
-                                            <td>{{$candidate['date_of_birth']}}</td>
-                                            <td>{{$candidate['Unit Kerja']}}</td>
-                                            <td>
-                                                <label class="badge badge-gradient-warning">{{$candidate['candidate_status_id']}} </label>
-                                            </td>
-                                            <td>{{$candidate['email']}}</td>
-                                            <td>
-                                                <a href="{{ url('data_activity_detail') }}" type="button" class="btn btn-sm btn-primary mb-1"> Detail</a>
-                                                <a href="{{ url('data_activity_edit') }}" type="button" class="btn btn-sm btn-light mb-1"> Ubah</a>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td>{{$candidate['id']}}</td>
+                                        <td>{{$candidate['name']}} </td>
+                                        <td>{{$candidate['major']}}</td>
+                                        <td>{{$candidate['date_of_birth']}}</td>
+                                        <td>{{$candidate['Unit Kerja']}}</td>
+                                        <td>
+                                            <label
+                                                class="badge badge-gradient-warning">{{$candidate['candidate_status_id']}}
+                                            </label>
+                                        </td>
+                                        <td>{{$candidate['email']}}</td>
+                                        <td>
+                                            <a href="/candidate/{{$candidate->id}}" type="button"
+                                                class="btn btn-sm btn-primary mb-1"> Detail</a>
+                                            <a href="/candidate/{{$candidate->id}}/edit" type="button"
+                                                class="btn btn-sm btn-light mb-1"> Ubah</a>
+                                        </td>
+                                    </tr>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -62,7 +66,8 @@
     <!-- partial:../../partials/_footer.html -->
     <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021 <a href="https://www.jasamarga.com/" target="_blank">© PT Jasa Marga (Persero)</a>. All
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021 <a
+                    href="https://www.jasamarga.com/" target="_blank">© PT Jasa Marga (Persero)</a>. All
                 rights
                 reserved.</span>
             <span class="float-none float-sm-right d-block text-muted  text-center">Suported by Information

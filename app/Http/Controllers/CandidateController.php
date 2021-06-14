@@ -37,7 +37,44 @@ class CandidateController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $request->validate([
+            'name'              => 'required|max:300',
+            'gender'            => ' required|in:L,P',
+            'city_of_birth'     => ' required',
+            'date_of_birth'     => ' required|date|before_or_equal:date|',
+            'religion_id'       => 'required',
+            'email'             => 'required|email',
+            'phone'             => 'required|digits_between:10,12,',
+            'identity_number'   => 'required|size:16',
+            'identity_file'     => 'required|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'bank_id'           => 'required',
+            'bank_account'      => 'required|numeric',
+            'bank_name'         => 'required',
+            'address'           => 'required',
+            'education_id'      => 'required',
+            'major'              => 'required',
+            'skill'             => 'required',
+            'file_cv'           => 'required|file|mimes:jpeg,jpg,pdf|max:2048',
+            'file_photo'           => 'required|image|max:2048',
+            'file_portofolio'           => 'required|file|max:2048',
+
+
+
+
+
+
+        ]);
+
+        Candidate::create([
+            'name'                => $request->name,
+            'gender'              => $request->gender,
+            'city_of_birth'      => $request->city_of_birth,
+            'date_of_birth'       => $request->date_of_birth,
+            'religion_id'         => $request->religion_id,
+            'email'               => $request->email,
+            'phone'               => $request->phone,
+            'identity_number'     => $request->identity_number
+        ]);
     }
 
     /**
@@ -48,8 +85,8 @@ class CandidateController extends Controller
      */
     public function show($id)
     {
-
-        return view('candidate.data_activity_detail', compact('id'));
+        $candidate = Candidate::find($id);
+        return view('candidate.data_activity_detail', compact('candidate'));
     }
 
     /**
@@ -60,7 +97,8 @@ class CandidateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $candidate = Candidate::find($id);
+        return view('candidate.data_activity_edit', compact('candidate'));
     }
 
     /**
@@ -72,7 +110,17 @@ class CandidateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Candidate::find($id)->update([
+            'name'                => $request->name,
+            'gender'              => $request->gender,
+            'city_of_birth'       => $request->city_of_birth,
+            'date_of_birth'       => $request->date_of_birth,
+            'religion_id'         => $request->religion_id,
+            'email'               => $request->email,
+            'phone'               => $request->phone,
+            'identity_number'     => $request->identity_number
+
+        ]);
     }
 
     /**
