@@ -19,13 +19,22 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-body">
-                            <form action="/candidate" method="POST" enctype="multipart/form-data">
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+                            <form action="/candidate" method="POST" enctype="multipart/form-data" autocomplete="on">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name">Nama Lengkap</label><span class="text-danger">*</span>
-                                            <input type="text" class="form-control" id="#"
+                                            <input type="text" class="form-control" id="name"
                                                 placeholder="Ahmad Syaifullah" name="name" value="{{old('name')}}">
                                         </div>
                                         <div class="form-group">
@@ -83,7 +92,7 @@
                                                 class="text-danger">*</span>
                                             <input type="file" class="form-control" id="identity_file"
                                                 placeholder=" KTP " name="identity_file"
-                                                value="{{old('identity_file')}}">
+                                                value="{{old('identity_file') ? old('identity_file') : ''}}">
 
                                         </div>
                                         <div class="form-group">
@@ -109,7 +118,7 @@
                                         <div class="form-group">
                                             <label for="#">Linked In</label><span class="text-danger"></span>
                                             <input type="text" class="form-control" id="#" placeholder="Linked In"
-                                                name="likedin" value="{{old('likedin')}}">
+                                                name="linkedin" value="{{old('likedin')}}">
                                         </div>
                                     </div>
                                 </div><br>
@@ -135,8 +144,8 @@
                                                         value="{{old('graduation_year')}}">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" class="custom-control-input"
-                                                            id="customCheck2" name="in_collage"
-                                                            value="{{old('in_collage')}}">
+                                                            id="customCheck2" name="in_collage[]"
+                                                            value="{{old('in_collage[]')}}">
                                                         <label class="custom-control-label" for="customCheck2">Masih
                                                             Kuliah</label>
                                                     </div>
@@ -244,8 +253,8 @@
                                             <div class="form-check">
                                                 <label class="form-check-label">
                                                     <input type="radio" class="form-check-input"
-                                                        name="source_information" id="{{$item->id}}"
-                                                        value="{{old('source_information')}}">
+                                                        name="source_information_id" id="{{$item->id}}"
+                                                        value="{{old('source_information_id') ? old('source_information_id') : $item->id  }}">
                                                     {{$item->name}} <i class="input-helper"></i></label>
                                             </div>
                                         </div>
@@ -253,7 +262,7 @@
                                     @endforeach
                                 </div>
                                 <input type="text" class="form-control col-md-3 float-right mr-5" id="#" placeholder=""
-                                    name="source_information_others" value="{{old('source_information_others')}}"><br>
+                                    name="source_information_other" value="{{old('source_information_other')}}"><br>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">

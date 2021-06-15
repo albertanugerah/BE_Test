@@ -124,8 +124,8 @@
                                                 <div class="form-check ">
                                                     <label class="form-check-label">
                                                         <input type="checkbox" class="form-check-input"
-                                                            name="in_college"
-                                                            value="{{old('in_college') ? old('in_college') : $candidate->in_college}}">
+                                                            name="in_college[]"
+                                                            value="{{old('in_college[]') ? old('in_college[]') : $candidate->in_college}}">
                                                         Masih Kuliah
                                                     </label>
                                                 </div>
